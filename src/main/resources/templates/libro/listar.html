@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	</meta>
+	<meta http-equiv="Content-Type" content="text/html">
+	<link rel="stylesheet" href="/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</meta>
+	<title>Libros</title>
+</head>
+
+<body>
+<div>
+	<h1>Lista de Libros</h1>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>Titulo</th>
+			<th>Autor</th>
+			<th>Fecha Publicacion</th>
+			<th>Editorial</th>
+			<th>Edicion</th>
+			<th>Opción</th>
+		</tr>
+		<tr th:each="libro : ${libros}">
+			<td th:text="${libro.id}" class="ID">ID</td>
+			<td th:text="${libro.titulo}">Titulo</td>
+			<td th:text="${libro.autor}">Autor</td>
+			<td th:text="${libro.fechaPublicacion}">Fecha Publicacion</td>
+			<td th:text="${libro.editorial}">Editorial</td>
+			<td th:numbers="${libro.edicion}">Edicion</td>
+			<td><a th:href="@{/libro/editar/{id}(id= ${libro.id})}">Modificar</a>
+				<span> | </span>
+				<a th:href="@{/libro/borrar/{id}(id= ${libro.id})}">Borrar</a>
+			</td>
+		</tr>
+	</table>
+	<a th:href="@{/libro/insertar}">Agregar Libro</a>
+	<span> | </span>
+	<a th:href="@{/}">Ir al inicio</a>
+</div>
+</body>
+
+</html>

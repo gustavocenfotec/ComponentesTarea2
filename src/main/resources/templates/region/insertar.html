@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html">
+    <link rel="stylesheet" href="/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </meta>
+    <title>Crear</title>
+    <script async src="https://imgbb.com/upload.js"></script>
+</head>
+
+<body>
+    <h1>Insertar Region</h1>
+    <form action="#" th:action="@{/region/insertar}" th:object="${region}" method="post">
+        <label for="nameRegion">Nombre Region</label>
+        <input type="text" th:field="*{nameRegion}" id="nameRegion"><br />
+
+        <input type="submit" value="Agregar Region">
+    </form>
+<a th:href="@{/}">Ir al inicio</a>
+</body>
+
+</html>

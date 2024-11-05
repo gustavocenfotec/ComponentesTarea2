@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	</meta>
+	<meta http-equiv="Content-Type" content="text/html">
+	<link rel="stylesheet" href="/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</meta>
+	<title>SEDES</title>
+</head>
+
+<body>
+	<div>
+		<h1>LISTA DE SEDES</h1>
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>Nombre</th>
+				<th>Provincia</th>
+				<th>Canton</th>
+				<th>Distrito</th>
+				<th>Fecha de Apertura</th>
+				<th>Id Region</th>
+				<th>Opciones</th>
+			</tr>
+			<tr>
+			<tr th:each="sede : ${sedes}">
+				<td th:text="${sede.id}" class="ID">ID</td>
+				<td th:text="${sede.nombreSede}">Nombre</td>
+			<td th:text="${sede.provincia}">Provincia</td>
+			<td th:text="${sede.canton}">Canton</td>
+			<td th:text="${sede.distrito}">Distrito</td>
+			<td th:text="${sede.fechaApertura}">Fecha de Apertura</td>
+			<td th:text="${sede.idRegion}">Id Region</td>
+				<td>
+					<a th:href="@{/sede/editar/{id}(id= ${sede.id})}">Modificar</a>
+					<a th:href="@{/sede/borrar/{id}(id= ${sede.id})}">Borrar</a>
+				</td>
+			</tr>
+		</table>
+		<br>
+		<a th:href="@{/sede/insertar}">Agregar Sede</a><br />
+		<a th:href="@{/}">Ir al inicio</a>
+	</div>
+</body>
+
+</html>

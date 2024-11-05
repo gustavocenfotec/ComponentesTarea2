@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	</meta>
+	<meta http-equiv="Content-Type" content="text/html">
+	<link rel="stylesheet" href="/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</meta>
+	<title>Regiones</title>
+</head>
+
+<body>
+	<div>
+		<h1>Lista de Regiones</h1>
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>Nombre Region</th>
+				<th>[+]</th>
+<!--				<th>Apellido2</th>-->
+<!--				<th>Fecha Nac.</th>-->
+<!--				<th>Dirección</th>-->
+<!--				<th>Opción</th>-->
+			</tr>
+			<tr th:each="region : ${regiones}">
+				<td th:text="${region.id}">ID</td>
+				<td th:text="${region.nameRegion}">Nombre Region</td>
+				<td><a th:href="@{/region/listarSedes/{id}(id= ${region.id})}">Ver Sedes</a></td>
+
+				<!--				<td><a th:href="@{/region/editar/{id}(id= ${region.id})}">Modificar</a>-->
+<!--					<span> | </span>-->
+<!--					<a th:href="@{/region/borrar/{id}(id= ${region.id})}">Borrar</a>-->
+<!--				</td>-->
+			</tr>
+		</table>
+		<a th:href="@{/region/insertar}">Agregar Region</a>
+		<span> | </span>
+		<a th:href="@{/}">Ir al inicio</a>
+	</div>
+</body>
+
+</html>
