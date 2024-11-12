@@ -12,7 +12,7 @@ public class Libro {
     private long id;
     private String titulo;
     private String autor;
-    private int fechaPublicacion;
+    private String fechaPublicacion;
 
     private String editorial;
 
@@ -21,7 +21,7 @@ public class Libro {
     public Libro() {
     }
 
-    public Libro(long id, String titulo, String autor, int fechaPublicacion, String editorial, int edicion) {
+    public Libro(long id, String titulo, String autor, String fechaPublicacion, String editorial, int edicion) {
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;
@@ -54,13 +54,21 @@ public class Libro {
         this.autor = autor;
     }
 
-    public int getFechaPublicacion() {
+    public String getFechaPublicacion() {
         return fechaPublicacion;
     }
 
-    public void setFechaPublicacion(int fechaPublicacion) {
+    public void setFechaPublicacion(String fechaPublicacion) {
         this.fechaPublicacion = fechaPublicacion;
     }
+
+    //    public int getFechaPublicacion() {
+//        return fechaPublicacion;
+//    }
+//
+//    public void setFechaPublicacion(int fechaPublicacion) {
+//        this.fechaPublicacion = fechaPublicacion;
+//    }
 
     public String getEditorial() {
         return editorial;
