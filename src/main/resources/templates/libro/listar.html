@@ -30,7 +30,7 @@
 			<td th:text="${libro.autor}">Autor</td>
 			<td th:text="${libro.fechaPublicacion}">Fecha Publicacion</td>
 			<td th:text="${libro.editorial}">Editorial</td>
-			<td th:numbers="${libro.edicion}">Edicion</td>
+			<td th:text="${libro.edicion}">Edicion</td>
 			<td><a th:href="@{/libro/editar/{id}(id= ${libro.id})}">Modificar</a>
 				<span> | </span>
 				<a th:href="@{/libro/borrar/{id}(id= ${libro.id})}">Borrar</a>
